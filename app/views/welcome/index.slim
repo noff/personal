@@ -1,157 +1,390 @@
-.container.my-5
-  .row
-    .col-md-12.col-lg-8.offset-lg-2
-      .jumbotron
-        h1.display-3.font-weight-bold Michael Kechinov
-        h1.display-5.text-muted Technology entrepreneur
+.container-fluid.m-0.p-0.mk-hero-bg
+  .container
+    .align-items-center.d-none.d-md-flex.flex-nowrap
+      .col-lg-6
+        h1.display-3 Michael
+        h1.display-3.font-weight-bold.mb-4 Kechinov
+        h3.font-weight-light.mb-5 Technology Entrepreneur
+        .d-flex.mb-5
+          .mr-3
+            a href="#"
+              = image_tag 'icons/social/fb-light-icon.svg'
+          .mr-3
+            a href="#"
+              = image_tag 'icons/social/twitter-light-icon.svg'
+          .mr-3
+            a href="#"
+              = image_tag 'icons/social/linkedin-light-icon.svg'
+          .mr-3
+            a href="#"
+              = image_tag 'icons/social/instagram-light-icon.svg'
+        a.btn.btn-primary.rounded-pill.px-4 href="#" role="button" Say Hello!
+      .col-lg-6
+        = image_tag 'mk-photo.png', class: 'mk-hero-img__right'
 
-.container
-  .row.mb-5
-    .col-md-12.col-lg-8.offset-lg-2
-      p.lead I'm a skilled CTO. During the last 20 years of intensive IT career, I've created software products for 25 startups, launched three companies and sold one of them.
-      p.lead I help companies as technology advisor: setup effective process of product design and development and prevent spending time to useless functionality and activities.
-      p.lead And R&D… I love to dig in new businesses or opportunities (not new programming frameworks) and make something fresh and innovative.
-
-  .row.mb-5
-    .col-md-12.col-lg-8.offset-lg-2
-      h2 My experience
-      h3 CEO
-      ul
-        li REES46 - cloud platform for ecommerce marketing automation and personalization.
-        li REC ONE - advertising network for brands with ecommerce as inventory.
-        li Deliverly - subscription-based ecommerce company in baby&kids segment.
-      h3 CTO
-      ul
-        li Michael Kechinov's Startups Development Studio – software outsource company for startups.
-        li LikeHack – personalized feed engine for Facebook and Twitter.
-        li HackDay – series of hackathons.
-        li Snek Fite - a game for engineers.
-      h3 Technology advisor
-      ul
-        li Internal cryptocurrency platform for a community center.
-        li Blockchain-based election platform.
-        li Startups and investors community platform for the EU market.
-        li Real-estate tokenization platform.
-        li Email marketing platform.
-        li KYC engine, API and backoffice.
-        li mCommerce application for contact lenses selling.
-        li mCommerce application for a Japanese restaurant.
-        li A self-service platform for the insurance company.
-        li Website, CRM and mobile clients for a taxi company.
-        li Design of mCommerce application of Agent Provocateur.
-        li Interactive book for iOS and Android for kids.
-        li Mobile application to calculate calories and control health.
-        li Mobile application "Doman cards" for kids.
-        li Payment solution platform.
-        li Augmented reality editor and client.
-        li Smart house constructor platform.
-        li eCommerce services scanner.
-        li Print-on-demand platform.
-        li Grocery eCommerce platform.
-        li Coupon platform mobile application.
-        li Volunteers and organizations communication platform.
-        li Online marketing polls platform for Facebook.
-        li MMORPG fans platform.
-        li Travel website: air and railroad tickets, car rentals and hotels.
-        li Startup tracking service.
-        li Communication service between citizen and city government.
-        li HR service.
-        li Real estate management platform for development companies.
-        li Events management service.
-        li Another travel service with cheap trips.
-        li And another one travel service for local tourism.
-        li Business card management and exchange application.
-        li eCommerce platform with automatic warehouses in the backend.
-        li And another one mobile application for travel.
-        li HR service for CV visualization.
-        li … and another 20 projects
+      //Hidden on LG
+    .d-flex.d-md-none.pt-5
+      .col
+        h1.display-4 Michael
+        h1.display-4.font-weight-bold.mb-4 Kechinov
+        h5.font-weight-light.mb-5 Technology Entrepreneur
+        .d-flex.flex-column
+          .mb-3
+            a href="#"
+              = image_tag 'icons/social/fb-light-icon.svg'
+          .mb-3
+            a href="#"
+              = image_tag 'icons/social/twitter-light-icon.svg'
+          .mb-3
+            a href="#"
+              = image_tag 'icons/social/linkedin-light-icon.svg'
+          .mb-3
+            a href="#"
+              = image_tag 'icons/social/instagram-light-icon.svg'
+        = image_tag 'mk-photo.png', class: 'mk-hero-img__center'
+        / a.btn.btn-lg.btn-primary.rounded-pill.px-4 href="#" role="button" Say Hello!
 
 
-  .row.mb-5
-    .col-md-12.col-lg-8.offset-lg-2
-      h2 Skills
-      h3 Technical Skills
-      ul
-        li Ruby on Rails
-        li PHP
-        li Ruby
-        li Python
-        li MySQL
-        li PostgreSQL
-        li Clickhouse
-        li Neo4j
-        li Redis
-        li JavaScript
-        li Vue.JS
-        li jQuery
-        li Arduino
-        li CSS, SASS
-        li Git
 
-      h3 Buzzwords
-      ul
-        li Machine Learning
-        li Neural Networks
-        li Tensorflow
-        li Keras
-        li Artificial Intelligence
-        li Computer Vision
-        li Blockchain
-        li Big Data
-        li High Load
-        li Personalization
 
-      h3 Organizational Skills
-      ul
-        li Software Development
-        li Agile Methodologies
-        li Entrepreneurship
-        li Programming
-        li Scrum
-        li Software Engineering
-        li E-commerce
-        li Agile
-        li Cloud Computing
-        li OOP
-        li Venture Capital
-        li Sales Management
-        li Project Management
-        li Product Management
-        li R&D
-        li Team Management
+.container-fluid.m-0.p-0
+  .container.py-5
+    .row.mb-4
+      / .col-md-12.col-lg-8.offset-lg-2
+      .col
+        h1.text-uppercase About
+    .row.justify-content-center
+      .col-md-12.col-lg-10
+        .lead.font-weight-normal.mk-bubble
+          p I'm a skilled CTO. During the last 20 years of intensive IT career, I've created software products for 25 startups, launched three companies and sold one of them.
+          p I help companies as technology advisor: setup effective process of product design and development and prevent spending time to useless functionality and activities.
+          p And R&D… I love to dig in new businesses or opportunities (not new programming frameworks) and make something fresh and innovative.
 
-      h3 Personal Skills
-      ul
-        li Problem Solving
-        li Stress Management
-        li Snowboarding
+.container-fluid.m-0.p-0.bg-light
+  .container.py-5
+    .row.mb-4
+      .col
+        h1.text-uppercase My experience
+    .row.justify-content-center
+      .col-md-12.col-lg-10
+        div.mb-5
+          h3.mb-3 CEO
+          ul.mk-list-check
+            li <b>REES46</b> – cloud platform for ecommerce marketing automation and personalization.
+            li <b>REC ONE</b> – advertising network for brands with ecommerce as inventory.
+            li <b>Deliverly</b> – subscription-based ecommerce company in baby&kids segment.
+        div.mb-5
+          h3.mb-3 CTO
+          ul.mk-list-check
+            li <b>Michael Kechinov's Startups Development Studio</b> – software outsource company for startups.
+            li <b>LikeHack</b> – personalized feed engine for Facebook and Twitter.
+            li <b>HackDay</b> – series of hackathons.
+            li <b>Snek Fite</b> – a game for engineers.
+        div.mb-5
+          h3.mb-3 Technology advisor
+          ul.mk-list-check
+            li Internal cryptocurrency platform for a community center.
+            li Blockchain-based election platform.
+            li Startups and investors community platform for the EU market.
+            li Real-estate tokenization platform.
+            li Email marketing platform.
+            li KYC engine, API and backoffice.
+            li mCommerce application for contact lenses selling.
+            li mCommerce application for a Japanese restaurant.
+            li A self-service platform for the insurance company.
+            li Website, CRM and mobile clients for a taxi company.
+            li Design of mCommerce application of Agent Provocateur.
+            li Interactive book for iOS and Android for kids.
+            li Mobile application to calculate calories and control health.
+            li Mobile application "Doman cards" for kids.
+            li Payment solution platform.
+            li Augmented reality editor and client.
+            li Smart house constructor platform.
+            li eCommerce services scanner.
+            li Print-on-demand platform.
+            li Grocery eCommerce platform.
+            li Coupon platform mobile application.
+            li Volunteers and organizations communication platform.
+            li Online marketing polls platform for Facebook.
+            li MMORPG fans platform.
+            li Travel website: air and railroad tickets, car rentals and hotels.
+            li Startup tracking service.
+            li Communication service between citizen and city government.
+            li HR service.
+            li Real estate management platform for development companies.
+            li Events management service.
+            li Another travel service with cheap trips.
+            li And another one travel service for local tourism.
+            li Business card management and exchange application.
+            li eCommerce platform with automatic warehouses in the backend.
+            li And another one mobile application for travel.
+            li HR service for CV visualization.
+            li … and another 20 projects
 
-  .row.mb-5
-    .col-md-12.col-lg-8.offset-lg-2
-      h2 Courses and certifications
-      ul
-        li Google Analytics
-        li Neo4j GraphAcademy
-        li NeuroScience 101
-        li Programming Neural Networks
-        li Programming Vue.JS
-        li Recommender Systems
-        li Bareboat Skipper
+.container-fluid.m-0.p-0
+  .container.py-5
+    .row.mb-5
+      .col
+        h1.text-uppercase Skills
+    .row.justify-content-center
+      .col-md-12.col-lg-10
+        div.mb-5
+          h3.mb-3 Technical Skills
+          ul.row.mk-list-square
+            li.col-lg-4.col-md-6.col-sm-12
+              span Ruby on Rails
+            li.col-lg-4.col-md-6.col-sm-12
+              span PHP
+            li.col-lg-4.col-md-6.col-sm-12
+              span Ruby
+            li.col-lg-4.col-md-6.col-sm-12
+              span Python
+            li.col-lg-4.col-md-6.col-sm-12
+              span Дети
+            li.col-lg-4.col-md-6.col-sm-12
+              span MySQL
+            li.col-lg-4.col-md-6.col-sm-12
+              span PostgreSQL
+            li.col-lg-4.col-md-6.col-sm-12
+              span Clickhouse
+            li.col-lg-4.col-md-6.col-sm-12
+              span Neo4j
+            li.col-lg-4.col-md-6.col-sm-12
+              span Redis
+            li.col-lg-4.col-md-6.col-sm-12
+              span JavaScript
+            li.col-lg-4.col-md-6.col-sm-12
+              span Vue.JS
+            li.col-lg-4.col-md-6.col-sm-12
+              span jQuery
+            li.col-lg-4.col-md-6.col-sm-12
+              span Arduino
+            li.col-lg-4.col-md-6.col-sm-12
+              span CSS, SASS
+            li.col-lg-4.col-md-6.col-sm-12
+              span Git
+        div.mb-5
+          h3.mb-3 Buzzwords
+          ul.row.mk-list-square
+            li.col-lg-4.col-md-6.col-sm-12
+              span Machine Learning
+            li.col-lg-4.col-md-6.col-sm-12
+              span Neural Networks
+            li.col-lg-4.col-md-6.col-sm-12
+              span Tensorflow
+            li.col-lg-4.col-md-6.col-sm-12
+              span Keras
+            li.col-lg-4.col-md-6.col-sm-12
+              span Artificial Intelligence
+            li.col-lg-4.col-md-6.col-sm-12
+              span Computer Vision
+            li.col-lg-4.col-md-6.col-sm-12
+              span Blockchain
+            li.col-lg-4.col-md-6.col-sm-12
+              span Big Data
+            li.col-lg-4.col-md-6.col-sm-12
+              span High Load
+            li.col-lg-4.col-md-6.col-sm-12
+              span Personalization
+        div.mb-5
+          h3.mb-3 Organizational Skills
+          ul.row.mk-list-square
+            li.col-lg-4.col-md-6.col-sm-12
+              span Software Development
+            li.col-lg-4.col-md-6.col-sm-12
+              span Agile Methodologies
+            li.col-lg-4.col-md-6.col-sm-12
+              span Entrepreneurship
+            li.col-lg-4.col-md-6.col-sm-12
+              span Programming
+            li.col-lg-4.col-md-6.col-sm-12
+              span Scrum
+            li.col-lg-4.col-md-6.col-sm-12
+              span Software Engineering
+            li.col-lg-4.col-md-6.col-sm-12
+              span E-commerce
+            li.col-lg-4.col-md-6.col-sm-12
+              span Agile
+            li.col-lg-4.col-md-6.col-sm-12
+              span Cloud Computing
+            li.col-lg-4.col-md-6.col-sm-12
+              span OOP
+            li.col-lg-4.col-md-6.col-sm-12
+              span Venture Capital
+            li.col-lg-4.col-md-6.col-sm-12
+              span Sales Management
+            li.col-lg-4.col-md-6.col-sm-12
+              span PProject Management
+            li.col-lg-4.col-md-6.col-sm-12
+              span Product Management
+            li.col-lg-4.col-md-6.col-sm-12
+              span R&D
+            li.col-lg-4.col-md-6.col-sm-12
+              span Team Management
 
-  .row.mb-5
-    .col-md-12.col-lg-8.offset-lg-2
-      h2 Public me
-      h3 Online profiles
-      ul
-        li Facebook – I write here mostly in Russian
-        li Twitter – I write here mostly in English
-        li Instagram - I publish here photos of non-professional street art I found worldwide.
-        li LinkedIn – I don't publish here anything, but it includes my professional information.
-        li 500px – I publish here interesting photos of places I've visited.
-      h3 Keynotes
-      h3 Events
+        div.mb-5
+          h3.mb-3 Personal Skills
+          ul.row.mk-list-square
+            li.col-lg-4.col-md-6.col-sm-12
+              span Problem Solving
+            li.col-lg-4.col-md-6.col-sm-12
+              span Stress Management
+            li.col-lg-4.col-md-6.col-sm-12
+              span Snowboarding
 
-  .row.mb-5
-    .col-md-12.col-lg-8.offset-lg-2
-      h2 Contact me
-      p = mail_to 'kechinoff@gmail.com'
+
+.container-fluid.m-0.p-0.bg-light
+  .container.py-5
+    .row.mb-4
+      .col
+        h1.text-uppercase Courses & certifications
+    .row.justify-content-center
+      .col-md-12.col-lg-10
+        .row
+          .col-lg-4.col-md-6.col-sm-12.mb-3
+            .d-flex.mk-card-certificate
+              .d-flex.flex-fill
+                h5 Google Analytics
+              .d-flex.align-self-end
+                = image_tag 'icons/sertificate/sertificate.svg', class: 'img-fluid'
+          .col-lg-4.col-md-6.col-sm-12.mb-3
+            .d-flex.mk-card-certificate
+              .d-flex.flex-fill
+                h5 Neo4j GraphAcademy
+              .d-flex.align-self-end
+                = image_tag 'icons/sertificate/sertificate.svg'
+          .col-lg-4.col-md-6.col-sm-12.mb-3
+            .d-flex.mk-card-certificate
+              .d-flex.flex-fill
+                h5 NeuroScience 101
+              .d-flex.align-self-end
+                = image_tag 'icons/sertificate/sertificate.svg'
+          .col-lg-4.col-md-6.col-sm-12.mb-3
+            .d-flex.mk-card-certificate
+              .d-flex.flex-fill
+                h5 Programming Neural Networks
+              .d-flex.align-self-end
+                = image_tag 'icons/sertificate/sertificate.svg'
+          .col-lg-4.col-md-6.col-sm-12.mb-3
+            .d-flex.mk-card-certificate
+              .d-flex.flex-fill
+                h5 Programming Vue.JS
+              .d-flex.align-self-end
+                = image_tag 'icons/sertificate/sertificate.svg'
+          .col-lg-4.col-md-6.col-sm-12.mb-3
+            .d-flex.mk-card-certificate
+              .d-flex.flex-fill
+                h5 Recommender Systems
+              .d-flex.align-self-end
+                = image_tag 'icons/sertificate/sertificate.svg'
+          .col-lg-4.col-md-6.col-sm-12.mb-3
+            .d-flex.mk-card-certificate
+              .d-flex.flex-fill
+                h5 Bareboat Skipper
+              .d-flex.align-self-end
+                = image_tag 'icons/sertificate/sertificate.svg'
+
+.container-fluid.m-0.p-0
+  .container.py-5
+    .row.mb-5
+      .col
+        h1.text-uppercase Public me
+    .row.justify-content-center
+      .col-md-12.col-lg-10
+        div.mb-5
+          h3.mb-3 Online profiles
+          .row.mb-5
+            .col
+              .d-flex.p-2
+                div.mr-3
+                  = image_tag 'icons/social/fb-icon.svg'
+                .d-flex.flex-column
+                  div
+                    h5.m-0
+                      a href="#" Facebook
+                  div – I write here mostly in Russian
+              .d-flex.p-2
+                div.mr-3
+                  = image_tag 'icons/social/twitter-icon.svg'
+                .d-flex.flex-column
+                  div
+                    h5.m-0
+                      a href="#" Twitter
+                  div – I write here mostly in English
+              .d-flex.p-2
+                div.mr-3
+                  = image_tag 'icons/social/instagram-icon.svg'
+                .d-flex.flex-column
+                  div
+                    h5.m-0
+                      a href="#" Instagram
+                  div - I publish here photos of non-professional street art I found worldwide.
+              .d-flex.p-2
+                div.mr-3
+                  = image_tag 'icons/social/linkedin-icon.svg'
+                .d-flex.flex-column
+                  div
+                    h5.m-0
+                      a href="#" LinkedIn
+                  div – I don't publish here anything, but it includes my professional information.
+              .d-flex.p-2
+                div.mr-3
+                  = image_tag 'icons/social/500px-icon.svg'
+                .d-flex.flex-column
+                  div
+                    h5.m-0
+                      a href="#" 500px
+                  div – I publish here interesting photos of places I've visited.
+        div.mb-5
+          h3.mb-3 Keynotes
+          .row
+            .col
+              .d-flex.flex-column.p-2
+                small.text-muted Mar 24, 2018
+                h5
+                  a href="#" Deciphering Marketing Lingo For Small Business Owners
+
+              .d-flex.flex-column.p-2
+                small.text-muted Mar 24, 2018
+                h5
+                  a href="#" Feedback Management
+
+              .d-flex.flex-column.p-2
+                small.text-muted Mar 24, 2018
+                h5
+                  a href="#" Search Engine Optimization And Advertising
+
+        div.mb-5
+          h3.mb-3 Events
+          .row
+            .col
+              .d-flex.flex-column.p-2
+                small.text-muted Mar 24, 2018
+                h5
+                  a href="#" Event Name 01
+
+              .d-flex.flex-column.p-2
+                small.text-muted Mar 24, 2018
+                h5
+                  a href="#" Event Name 02
+
+              .d-flex.flex-column.p-2
+                small.text-muted Mar 24, 2018
+                h5
+                  a href="#" Event Name 03
+
+.container-fluid.m-0.p-0.bg-light
+  .container.py-5
+    .row
+      .col
+        h1.text-uppercase Contact me
+    .row.justify-content-center.py-5
+      .col-md-12.col-lg-10.text-center
+        h3.font-weight-light.mb-4 = mail_to 'kechinoff@gmail.com'
+        a.btn.btn-lg.btn-primary.rounded-pill.px-4 href="#" role="button" Say Hello!
+
+.container-fluid.m-0.p-0.bg-light
+  .container.pb-5
+    .row
+      .col
+        p.text-center.small.text-muted.m-0.p-0 © #{Time.now.year}, Michael Kechinov
