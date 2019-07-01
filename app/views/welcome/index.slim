@@ -6,18 +6,10 @@
         h1.display-3.font-weight-bold.mb-4 Kechinov
         h3.font-weight-light.mb-5 Technology Entrepreneur
         .d-flex.mb-5
-          .mr-3
-            a href="https://www.facebook.com/mkechinov"
-              = image_tag 'icons/social/fb-light-icon.svg'
-          .mr-3
-            a href="https://twitter.com/noff"
-              = image_tag 'icons/social/twitter-light-icon.svg'
-          .mr-3
-            a href="https://www.linkedin.com/in/mkechinov/"
-              = image_tag 'icons/social/linkedin-light-icon.svg'
-          .mr-3
-            a href="https://www.instagram.com/noff/"
-              = image_tag 'icons/social/instagram-light-icon.svg'
+          .mr-3 = link_to image_tag('icons/social/fb-light-icon.svg'), 'https://www.facebook.com/mkechinov', target: '_blank'
+          .mr-3 = link_to image_tag('icons/social/twitter-light-icon.svg'), 'https://twitter.com/noff', target: '_blank'
+          .mr-3 = link_to image_tag('icons/social/linkedin-light-icon.svg'), 'https://www.linkedin.com/in/mkechinov/', target: '_blank'
+          .mr-3 = link_to image_tag('icons/social/instagram-light-icon.svg'), 'https://www.instagram.com/noff/', target: '_blank'
         a.btn.btn-primary.rounded-pill.px-4 href="mailto:kechinoff@gmail.com" role="button" target="_blank" Say Hello!
       .col-lg-6
         = image_tag 'mk-photo.png', class: 'mk-hero-img__right'
@@ -29,18 +21,10 @@
         h1.display-4.font-weight-bold.mb-4 Kechinov
         h5.font-weight-light.mb-5 Technology Entrepreneur
         .d-flex.flex-column
-          .mb-3
-            a href="https://www.facebook.com/mkechinov"
-              = image_tag 'icons/social/fb-light-icon.svg'
-          .mb-3
-            a href="https://twitter.com/noff"
-              = image_tag 'icons/social/twitter-light-icon.svg'
-          .mb-3
-            a href="https://www.linkedin.com/in/mkechinov/"
-              = image_tag 'icons/social/linkedin-light-icon.svg'
-          .mb-3
-            a href="https://www.instagram.com/noff/"
-              = image_tag 'icons/social/instagram-light-icon.svg'
+          .mr-3 = link_to image_tag('icons/social/fb-light-icon.svg'), 'https://www.facebook.com/mkechinov', target: '_blank'
+          .mr-3 = link_to image_tag('icons/social/twitter-light-icon.svg'), 'https://twitter.com/noff', target: '_blank'
+          .mr-3 = link_to image_tag('icons/social/linkedin-light-icon.svg'), 'https://www.linkedin.com/in/mkechinov/', target: '_blank'
+          .mr-3 = link_to image_tag('icons/social/instagram-light-icon.svg'), 'https://www.instagram.com/noff/', target: '_blank'
         = image_tag 'mk-photo.png', class: 'mk-hero-img__center'
         / a.btn.btn-lg.btn-primary.rounded-pill.px-4 href="mailto:kechinoff@gmail.com" role="button" target="_blank" Say Hello!
 
@@ -300,40 +284,35 @@
                   = image_tag 'icons/social/fb-icon.svg'
                 .d-flex.flex-column
                   div
-                    h5.m-0
-                      a href="https://www.facebook.com/mkechinov" Facebook
+                    h5.m-0 = link_to 'Facebook', 'https://www.facebook.com/mkechinov', target: '_blank'
                   div – I write here mostly in Russian
               .d-flex.p-2
                 div.mr-3
                   = image_tag 'icons/social/twitter-icon.svg'
                 .d-flex.flex-column
                   div
-                    h5.m-0
-                      a href="https://twitter.com/noff" Twitter
+                    h5.m-0 = link_to 'Twitter', 'https://twitter.com/noff', target: '_blank'
                   div – I write here mostly in English
               .d-flex.p-2
                 div.mr-3
                   = image_tag 'icons/social/instagram-icon.svg'
                 .d-flex.flex-column
                   div
-                    h5.m-0
-                      a href="https://www.instagram.com/noff/" Instagram
+                    h5.m-0 = link_to 'Instagram', 'https://www.instagram.com/noff/', target: '_blank'
                   div - I publish here photos of non-professional street art I found worldwide.
               .d-flex.p-2
                 div.mr-3
                   = image_tag 'icons/social/linkedin-icon.svg'
                 .d-flex.flex-column
                   div
-                    h5.m-0
-                      a href="https://www.linkedin.com/in/mkechinov/" LinkedIn
+                    h5.m-0 = link_to 'LinkedIn', 'https://www.linkedin.com/in/mkechinov/', target: '_blank'
                   div – I don't publish here anything, but it includes my professional information.
               .d-flex.p-2
                 div.mr-3
                   = image_tag 'icons/social/500px-icon.svg'
                 .d-flex.flex-column
                   div
-                    h5.m-0
-                      a href="https://500px.com/noff" 500px
+                    h5.m-0 = link_to '500px', 'https://500px.com/noff', target: '_blank'
                   div – I publish here interesting photos of places I've visited.
         div.mb-5
           h3.mb-3 Keynotes
