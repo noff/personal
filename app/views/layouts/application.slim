@@ -4,6 +4,7 @@ html
     title = content_for?(:title) ? yield(:title) : 'Michael Kechinov, Technology Entrepreneur'
     meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"
     meta name="description" content="#{content_for?(:description) ? yield(:description) : "I'm a skilled CTO. During the last 20 years of intensive IT career, I've created software products for 25 startups, launched three companies and sold one of them."}"
+    meta name="yandex-verification" content="6f7801c098309c90"
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all'
