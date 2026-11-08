@@ -15,22 +15,6 @@
   color-scheme: dark;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    --bg: #f6f5f1;
-    --bg-2: #efeee8;
-    --card: #ffffff;
-    --line: #e2e0d8;
-    --text: #121316;
-    --muted: #5d6068;
-    --accent: #4d7c0f;
-    --accent-ink: #ffffff;
-    --glow: rgba(132, 204, 22, 0.22);
-    --glow-2: rgba(99, 102, 241, 0.14);
-    color-scheme: light;
-  }
-}
-
 *,
 *::before,
 *::after {
