@@ -128,19 +128,19 @@ export const SERIES = [
     },
   },
   {
-    url: 'https://vkvideo.ru/video-235859294_456239042',
-    title: { ru: 'Интернет-магазин на Rails и ИИ', en: 'An online store with Rails and AI' },
+    url: 'https://vk.ru/michael_kechinov',
+    title: { ru: 'AIDD: разработка силами ИИ-агентов', en: 'AIDD: AI-driven development' },
     text: {
-      ru: 'От идеи до прототипа меньше чем за три часа. Код открыт.',
-      en: 'From idea to prototype in under three hours. The code is open.',
+      ru: 'Пробую разные подходы к AI-driven development на реальных задачах. Первый выпуск: утилита для таймкодов через Spec Kit за 33 минуты и $10.',
+      en: 'Trying different approaches to AI-driven development on real tasks.',
     },
   },
   {
-    url: 'https://vkvideo.ru/video-235859294_456239027',
-    title: { ru: 'Daily Panel: продукт с нуля', en: 'Daily Panel: a product from scratch' },
+    url: 'https://vk.ru/michael_kechinov',
+    title: { ru: 'Внутри REES46', en: 'Inside REES46' },
     text: {
-      ru: 'Мини-продукт для дейли-митингов, сделанный в прямом эфире.',
-      en: 'A small product for daily stand-ups, built live on camera.',
+      ru: 'Фичи, багфиксы и ресерч в продукте, которым я руковожу.',
+      en: 'Features, bug fixes and research inside the product I run.',
     },
   },
 ];
