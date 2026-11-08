@@ -9,4 +9,6 @@ TARGET="${DEPLOY_TARGET:-pets:/home/mkechinov/mkechinov.com/}"
 mise install
 mise exec -- npm ci
 mise exec -- npm run build
-rsync -azv dist/ "$TARGET"
+#rsync -azv dist/ "$TARGET"
+rsync -azv dist/ mkechinov@pets:/home/mkechinov/mkechinov.com/
+
