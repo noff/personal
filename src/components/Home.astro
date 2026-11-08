@@ -1,0 +1,221 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import photo from '../assets/mk-photo.png';
+import { EMAIL, PUBLICS, PROFILES, SERIES, TALKS } from '../data/site';
+import type { Dict } from '../data/i18n';
+
+interface Props {
+  t: Dict;
+}
+const { t } = Astro.props;
+const L = t.lang;
+const fmt = new Intl.DateTimeFormat(L === 'ru' ? 'ru-RU' : 'en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+const year = new Date().getFullYear();
+---
+
+<Base t={t}>
+  <a class="skip" href="#main">{L === 'ru' ? 'К содержанию' : 'Skip to content'}</a>
+  <header class="top">
+    <div class="wrap top__in">
+      <a class="logo" href={t.path} aria-label={t.name}>MK<span>.</span></a>
+      <nav class="nav" aria-label={L === 'ru' ? 'Разделы' : 'Sections'}>
+        <a href="#about">{t.nav.about}</a>
+        <a href="#now">{t.nav.now}</a>
+        <a href="#path">{t.nav.path}</a>
+        <a href="#publics">{t.nav.publics}</a>
+      </nav>
+      <div class="top__end">
+        <a class="lang" href={t.altPath} hreflang={L === 'ru' ? 'en' : 'ru'} lang={L === 'ru' ? 'en' : 'ru'}>{t.altLabel}</a>
+        <a class="btn btn--sm" href="#contact">{t.nav.contact}</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap hero__grid">
+        <div class="hero__text">
+          <p class="eyebrow"><span class="dot" aria-hidden="true"></span>{t.eyebrow}</p>
+          <h1 id="hero-title" class="hero__name">
+            <span>{t.heroFirst}</span>
+            <span class="hero__last">{t.heroLast}</span>
+          </h1>
+          <p class="hero__lead">{t.lead}</p>
+          <div class="hero__cta">
+            <a class="btn" href={`mailto:${EMAIL}`}>{t.ctaWrite}<span aria-hidden="true">→</span></a>
+            <a class="btn btn--ghost" href={SERIES[0].url} target="_blank" rel="noopener">{t.ctaWatch}</a>
+          </div>
+        </div>
+        <div class="hero__photo">
+          <div class="hero__glow" aria-hidden="true"></div>
+          <Image
+            src={photo}
+            alt={t.name}
+            widths={[400, 640, 900]}
+            sizes="(max-width: 860px) 80vw, 560px"
+            loading="eager"
+            fetchpriority="high"
+            format="webp"
+            quality={82}
+          />
+        </div>
+      </div>
+      <div class="wrap">
+        <ul class="stats">
+          {t.stats.map((s) => (
+            <li>
+              <b>{s.n}</b>
+              <span class="stats__u">{s.u}</span>
+              <span class="stats__t">{s.t}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <section id="about" class="section" aria-labelledby="about-title">
+      <div class="wrap">
+        <h2 id="about-title" class="h2">{t.aboutTitle}</h2>
+        <div class="pillars">
+          {t.pillars.map((p) => (
+            <article class="card pillar">
+              <span class="pillar__k">{p.k}</span>
+              <h3>{p.h}</h3>
+              <p>{p.p}</p>
+              <ul class="tags">
+                {p.tags.map((tag) => <li>{tag}</li>)}
+              </ul>
+            </article>
+          ))}
+        </div>
+        <figure class="quote">
+          <blockquote><p>{t.quote}</p></blockquote>
+          <figcaption>{t.quoteNote}</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="now" class="section" aria-labelledby="now-title">
+      <div class="wrap">
+        <h2 id="now-title" class="h2">{t.nowTitle}</h2>
+        <div class="bento">
+          <a class="card bento__rees" href={t.nowReesUrl} target="_blank" rel="noopener">
+            <span class="label">CEO</span>
+            <h3>REES46</h3>
+            <p>{t.nowRees}</p>
+            <span class="more">{t.nowReesCta} ↗</span>
+          </a>
+          <div class="card bento__series">
+            <span class="label">{t.seriesTitle}</span>
+            <p class="muted">{t.seriesNote}</p>
+            <ol class="series">
+              {SERIES.map((s, i) => (
+                <li>
+                  <a href={s.url} target="_blank" rel="noopener">
+                    <span class="series__n">{String(i + 1).padStart(2, '0')}</span>
+                    <span>
+                      <b>{s.title[L]}</b>
+                      <span class="muted">{s.text[L]}</span>
+                    </span>
+                    <span class="series__go" aria-hidden="true">↗</span>
+                  </a>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="path" class="section" aria-labelledby="path-title">
+      <div class="wrap">
+        <h2 id="path-title" class="h2">{t.pathTitle}</h2>
+        <div class="path">
+          {t.path.map((g) => (
+            <div class="path__group">
+              <h3 class="label">{g.role}</h3>
+              <ul>
+                {g.items.map(([name, text]) => (
+                  <li>
+                    <b>{name}</b>
+                    <span class="muted">{text}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+          <div class="path__group">
+            <h3 class="label">{t.advisorTitle}</h3>
+            <p class="muted">{t.advisorText}</p>
+          </div>
+        </div>
+
+        <h2 id="talks" class="h3">{t.talksTitle}</h2>
+        <ul class="talks">
+          {TALKS.map((tk) => (
+            <li>
+              <a href={tk.url} target="_blank" rel="noopener">
+                <time datetime={tk.date}>{fmt.format(new Date(tk.date))}</time>
+                <span class="talks__ev">{tk.event}</span>
+                <span class="talks__t">{tk.title[L]}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <section id="publics" class="section" aria-labelledby="publics-title">
+      <div class="wrap">
+        <h2 id="publics-title" class="h2">{t.publicsTitle}</h2>
+        <p class="sub">{t.publicsLead}</p>
+        <ul class="links links--big">
+          {PUBLICS.map((p) => (
+            <li>
+              <a class="card link" href={p.url} target="_blank" rel="me noopener">
+                <span class="link__tag" data-id={p.id}>{p.tag}</span>
+                <span class="link__body">
+                  <b>{p.title[L]}</b>
+                  <span class="link__handle">{p.handle}</span>
+                  <span class="muted">{p.text[L]}</span>
+                </span>
+                <span class="link__go" aria-hidden="true">↗</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+        <h3 class="h3">{t.profilesTitle}</h3>
+        <ul class="links">
+          {PROFILES.map((p) => (
+            <li>
+              <a class="card link link--sm" href={p.url} target="_blank" rel="me noopener">
+                <span class="link__tag" data-id={p.id}>{p.tag}</span>
+                <span class="link__body">
+                  <b>{p.title[L]}</b>
+                  <span class="muted">{p.text[L]}</span>
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact" aria-labelledby="contact-title">
+      <div class="wrap">
+        <h2 id="contact-title" class="contact__h">{t.contactTitle}</h2>
+        <p class="sub">{t.contactText}</p>
+        <a class="contact__mail" href={`mailto:${EMAIL}`}>{EMAIL}</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot__in">
+      <span>© {year} {t.name}</span>
+      <span>{t.footer}</span>
+      <a href={t.altPath} hreflang={L === 'ru' ? 'en' : 'ru'}>{L === 'ru' ? 'English version' : 'Русская версия'}</a>
+    </div>
+  </footer>
+</Base>

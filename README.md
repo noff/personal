@@ -1,24 +1,15 @@
-# README
+# mkechinov.com
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Личный сайт Михаила Кечинова. Статика на [Astro](https://astro.build), Node через mise.
 
-Things you may want to cover:
+```bash
+mise install && npm ci
+npm run dev       # http://localhost:4321
+npm run build     # статика в dist/
+./deploy.sh       # сборка и rsync на сервер
+```
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Все факты, ссылки и выступления: `src/data/site.ts`; тексты RU/EN: `src/data/i18n.ts`.
+- `llms.txt`, `llms-full.txt`, JSON-LD (Person, ProfilePage) и sitemap собираются из этих же данных.
+- OG-картинки, фото и иконки: `node scripts/make-images.mjs`.
+- Старый сайт на Rails остался в истории ветки `master`.

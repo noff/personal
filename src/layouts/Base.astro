@@ -1,0 +1,108 @@
+---
+import '@fontsource-variable/onest';
+import '@fontsource-variable/jetbrains-mono';
+import '../styles/global.css';
+import { SITE, EMAIL, SAME_AS, KNOWS_ABOUT } from '../data/site';
+import type { Dict } from '../data/i18n';
+
+interface Props {
+  t: Dict;
+}
+const { t } = Astro.props;
+const url = new URL(t.path, SITE).href;
+const ogImage = new URL(t.lang === 'ru' ? '/og.jpg' : '/og-en.jpg', SITE).href;
+const photo = new URL('/michael-kechinov.jpg', SITE).href;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Person',
+      '@id': `${SITE}/#person`,
+      name: t.name,
+      alternateName: ['Михаил Кечинов', 'Michael Kechinov', 'Mikhail Kechinov'].filter(
+        (n) => n !== t.name,
+      ),
+      url: SITE + '/',
+      image: photo,
+      email: `mailto:${EMAIL}`,
+      jobTitle: t.jobTitle,
+      description: t.description,
+      worksFor: {
+        '@type': 'Organization',
+        name: 'REES46',
+        url: 'https://rees46.ru',
+        sameAs: ['https://rees46.com'],
+      },
+      homeLocation: { '@type': 'Place', name: t.lang === 'ru' ? 'Санкт-Петербург' : 'Saint Petersburg' },
+      knowsAbout: KNOWS_ABOUT,
+      knowsLanguage: ['ru', 'en'],
+      sameAs: SAME_AS,
+    },
+    {
+      '@type': 'ProfilePage',
+      '@id': `${url}#page`,
+      url,
+      name: t.title,
+      inLanguage: t.lang,
+      mainEntity: { '@id': `${SITE}/#person` },
+      isPartOf: { '@id': `${SITE}/#website` },
+      dateModified: new Date().toISOString().slice(0, 10),
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${SITE}/#website`,
+      url: SITE + '/',
+      name: 'Михаил Кечинов / Michael Kechinov',
+      inLanguage: ['ru', 'en'],
+      publisher: { '@id': `${SITE}/#person` },
+    },
+  ],
+};
+---
+
+<!doctype html>
+<html lang={t.lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{t.title}</title>
+    <meta name="description" content={t.description} />
+    <meta name="author" content={t.name} />
+    <link rel="canonical" href={url} />
+    <link rel="alternate" hreflang="ru" href={SITE + '/'} />
+    <link rel="alternate" hreflang="en" href={SITE + '/en/'} />
+    <link rel="alternate" hreflang="x-default" href={SITE + '/'} />
+    <link rel="alternate" type="text/plain" title="llms.txt" href="/llms.txt" />
+    <link rel="me" href={`mailto:${EMAIL}`} />
+    {SAME_AS.map((u) => <link rel="me" href={u} />)}
+
+    <meta name="theme-color" content="#0a0b0d" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f6f5f1" media="(prefers-color-scheme: light)" />
+    <meta name="color-scheme" content="dark light" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <meta property="og:type" content="profile" />
+    <meta property="og:site_name" content={t.name} />
+    <meta property="og:title" content={t.title} />
+    <meta property="og:description" content={t.description} />
+    <meta property="og:url" content={url} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content={t.locale} />
+    <meta property="profile:first_name" content={t.heroFirst} />
+    <meta property="profile:last_name" content={t.heroLast} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@noff" />
+    <meta name="twitter:image" content={ogImage} />
+
+    <meta name="yandex-verification" content="6f7801c098309c90" />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
