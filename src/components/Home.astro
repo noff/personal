@@ -15,18 +15,17 @@ const year = new Date().getFullYear();
 ---
 
 <Base t={t}>
-  <a class="skip" href="#main">{L === 'ru' ? 'К содержанию' : 'Skip to content'}</a>
+  <a class="skip" href="#main">К содержанию</a>
   <header class="top">
     <div class="wrap top__in">
       <a class="logo" href={t.path} aria-label={t.name}>MK<span>.</span></a>
-      <nav class="nav" aria-label={L === 'ru' ? 'Разделы' : 'Sections'}>
+      <nav class="nav" aria-label=Разделы>
         <a href="#about">{t.nav.about}</a>
         <a href="#now">{t.nav.now}</a>
         <a href="#path">{t.nav.path}</a>
         <a href="#publics">{t.nav.publics}</a>
       </nav>
       <div class="top__end">
-        <a class="lang" href={t.altPath} hreflang={L === 'ru' ? 'en' : 'ru'} lang={L === 'ru' ? 'en' : 'ru'}>{t.altLabel}</a>
         <a class="btn btn--sm" href="#contact">{t.nav.contact}</a>
       </div>
     </div>
@@ -101,7 +100,7 @@ const year = new Date().getFullYear();
         <h2 id="now-title" class="h2">{t.nowTitle}</h2>
         <div class="bento">
           <a class="card bento__rees" href={t.nowReesUrl} target="_blank" rel="noopener">
-            <span class="label">CEO</span>
+            <span class="label">Генеральный директор</span>
             <h3>REES46</h3>
             <p>{t.nowRees}</p>
             <span class="more">{t.nowReesCta} ↗</span>
@@ -215,7 +214,6 @@ const year = new Date().getFullYear();
     <div class="wrap foot__in">
       <span>© {year} {t.name}</span>
       <span>{t.footer}</span>
-      <a href={t.altPath} hreflang={L === 'ru' ? 'en' : 'ru'}>{L === 'ru' ? 'English version' : 'Русская версия'}</a>
     </div>
   </footer>
 </Base>

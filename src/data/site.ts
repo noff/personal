@@ -97,7 +97,7 @@ export const PROFILES: LinkItem[] = [
     tag: 'X',
     url: 'https://x.com/noff',
     handle: '@noff',
-    title: { ru: 'X (Twitter)', en: 'X (Twitter)' },
+    title: { ru: 'X (Твиттер)', en: 'X (Twitter)' },
     text: { ru: 'Пишу в основном по-английски', en: 'Mostly in English' },
   },
   {
@@ -149,7 +149,7 @@ export const TALKS = [
   {
     date: '2019-06-05',
     event: 'Ural Internet Week',
-    title: { ru: 'Комплексная автоматизация маркетинга в e-commerce', en: 'Complex marketing automation in e-commerce' },
+    title: { ru: 'Комплексная автоматизация маркетинга в интернет-торговле', en: 'Complex marketing automation in e-commerce' },
     url: 'https://www.youtube.com/watch?v=C1WO1mfFLJM',
   },
   {

@@ -7,8 +7,6 @@ export default defineConfig({
   trailingSlash: 'always',
   build: { format: 'directory', inlineStylesheets: 'always' },
   integrations: [
-    sitemap({
-      i18n: { defaultLocale: 'ru', locales: { ru: 'ru-RU', en: 'en-US' } },
-    }),
+    sitemap(),
   ],
 });

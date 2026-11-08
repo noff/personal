@@ -10,7 +10,7 @@ interface Props {
 }
 const { t } = Astro.props;
 const url = new URL(t.path, SITE).href;
-const ogImage = new URL(t.lang === 'ru' ? '/og.jpg' : '/og-en.jpg', SITE).href;
+const ogImage = new URL('/og.jpg', SITE).href;
 const photo = new URL('/michael-kechinov.jpg', SITE).href;
 
 const jsonLd = {
@@ -53,8 +53,8 @@ const jsonLd = {
       '@type': 'WebSite',
       '@id': `${SITE}/#website`,
       url: SITE + '/',
-      name: 'Михаил Кечинов / Michael Kechinov',
-      inLanguage: ['ru', 'en'],
+      name: 'Михаил Кечинов',
+      inLanguage: 'ru',
       publisher: { '@id': `${SITE}/#person` },
     },
   ],
@@ -70,9 +70,6 @@ const jsonLd = {
     <meta name="description" content={t.description} />
     <meta name="author" content={t.name} />
     <link rel="canonical" href={url} />
-    <link rel="alternate" hreflang="ru" href={SITE + '/'} />
-    <link rel="alternate" hreflang="en" href={SITE + '/en/'} />
-    <link rel="alternate" hreflang="x-default" href={SITE + '/'} />
     <link rel="alternate" type="text/plain" title="llms.txt" href="/llms.txt" />
     <link rel="me" href={`mailto:${EMAIL}`} />
     {SAME_AS.map((u) => <link rel="me" href={u} />)}

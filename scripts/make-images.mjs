@@ -36,5 +36,4 @@ async function og(file, name, line) {
     .toFile(file);
 }
 await og('public/og.jpg', ['Михаил', 'Кечинов'], 'РАЗРАБОТКА · СТАРТАПЫ · ИИ');
-await og('public/og-en.jpg', ['Michael', 'Kechinov'], 'SOFTWARE · STARTUPS · AI');
 console.log('done');

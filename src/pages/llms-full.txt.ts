@@ -2,7 +2,7 @@ import type { APIRoute } from 'astro';
 import { SITE, EMAIL, PUBLICS, PROFILES, SERIES, TALKS } from '../data/site';
 import { T, type Dict } from '../data/i18n';
 
-// Полный текст сайта в Markdown на двух языках, для LLM и ИИ-поиска.
+// Полный текст сайта в Markdown, для LLM и ИИ-поиска.
 function page(t: Dict) {
   const L = t.lang;
   return `# ${t.name}
@@ -16,14 +16,14 @@ ${t.stats.map((s) => `- ${s.n} ${s.u}: ${s.t}`).join('\n')}
 
 ## ${t.aboutTitle}
 
-${t.pillars.map((p) => `### ${p.h}\n\n${p.p}\n\nTags: ${p.tags.join(', ')}`).join('\n\n')}
+${t.pillars.map((p) => `### ${p.h}\n\n${p.p}\n\nКлючевые слова: ${p.tags.join(', ')}`).join('\n\n')}
 
 > ${t.quote}
 > — ${t.quoteNote}
 
 ## ${t.nowTitle}
 
-### REES46 (CEO)
+### REES46 (генеральный директор)
 
 ${t.nowRees} ${t.nowReesUrl}
 
@@ -62,6 +62,6 @@ ${t.contactTitle} ${t.contactText} Email: ${EMAIL}
 }
 
 export const GET: APIRoute = () =>
-  new Response(`${page(T.ru)}\n---\n\n${page(T.en)}`, {
+  new Response(page(T.ru), {
     headers: { 'Content-Type': 'text/plain; charset=utf-8' },
   });
