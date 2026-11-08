@@ -93,14 +93,6 @@ export const PROFILES: LinkItem[] = [
     text: { ru: 'Код и открытые проекты', en: 'Code and open projects' },
   },
   {
-    id: 'x',
-    tag: 'X',
-    url: 'https://x.com/noff',
-    handle: '@noff',
-    title: { ru: 'X (Твиттер)', en: 'X (Twitter)' },
-    text: { ru: 'Пишу в основном по-английски', en: 'Mostly in English' },
-  },
-  {
     id: 'facebook',
     tag: 'f',
     url: 'https://www.facebook.com/mkechinov',
@@ -128,7 +120,7 @@ export const SERIES = [
     },
   },
   {
-    url: 'https://vk.ru/michael_kechinov',
+    url: 'https://vkvideo.ru/playlist/-235859294_8',
     title: { ru: 'AIDD: разработка силами ИИ-агентов', en: 'AIDD: AI-driven development' },
     text: {
       ru: 'Пробую разные подходы к AI-driven development на реальных задачах. Первый выпуск: утилита для таймкодов через Spec Kit за 33 минуты и $10.',
@@ -136,7 +128,7 @@ export const SERIES = [
     },
   },
   {
-    url: 'https://vk.ru/michael_kechinov',
+    url: 'https://vkvideo.ru/playlist/-235859294_2',
     title: { ru: 'Внутри REES46', en: 'Inside REES46' },
     text: {
       ru: 'Фичи, багфиксы и ресерч в продукте, которым я руковожу.',
