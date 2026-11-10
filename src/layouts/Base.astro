@@ -47,7 +47,7 @@ const jsonLd = {
       inLanguage: t.lang,
       mainEntity: { '@id': `${SITE}/#person` },
       isPartOf: { '@id': `${SITE}/#website` },
-      dateModified: new Date().toISOString().slice(0, 10),
+      dateModified: new Date().toISOString().replace(/\.\d{3}Z$/, "+00:00"),
     },
     {
       '@type': 'WebSite',
